@@ -100,7 +100,7 @@ This section introduces the technical part of **Auth3 protocol**, whose overview
 
 + **Data Consumer and Algorithm**: The role who pays for the data and consums the value of data. Auth3 protocol provides **client** for the consumer to burn the data token and use the data. In our protocol, consumer needs to leverage a **data-usage algorithm** to use the data, and get the result returned by the algorithm. The execution will be performed in **Auth engine** to enforce the data privcay. 
 
-  The data-usage algorithm can be implemented by any developer or the consumer herself. **Auth3DAO** will audit the algorithm ([Section 4.6](#4.6 Auth3DAO)) and **data operator** could deployed access policy to specify which algorithm can be used on her data project ([Section4.3](#4.3 Data Operator)). 
+  The data-usage algorithm can be implemented by any developer or the consumer herself. **Auth3DAO** will audit the algorithm ([Section 4.5](#4.5 Auth3 DAO)) and **data operator** could deployed access policy to specify which algorithm can be used on her data project ([Section4.3](#4.3 Data Operator)). 
 
   
 
@@ -118,7 +118,7 @@ To perform authentication in the whole lifecycle of data assets exchanging, Auth
 
 + **Computation Auth**: After the data asset has been authenticated, it can be exchanged. The exchanging procedure itself should be authenticated. Auth engine provides *Computation Auth* to protect the whole data exchanging procedure, from data feeding to result returning. In **Auth3**, data assets are exchanged by computation with data-usage algorithm. Becore the execution, **Computation Auth** will validate the exchanged data and the algorithm. During the execution, it enforces that the execution-flow cannot be tampered with, and the return value is generated from the exchanged data and algorithm. Finally, **Computation Auth** provides an **execution report** to proof these authentication. **Data consumer** can validate the computation by checking this report. 
 
-In the workflow of **Auth engine**, we need to enforce both the privacy and the trust. On one side, the data needs to be transferrred to Auth engine to perform the authentication and computation. The data privacy must be protected. On the other side, Auth engine must enforces that the reports provided by it is trusted.  We uses **Trusted Execution Environment (TEE)** and **cryptographic technology (e.g., secure multi-party computation (sMPC))** to enforce the data privacy and report trust. Details of how our protocol enforces the privacy and trust can be found in [Section 4.4](#4.4. Trust&Privacy, Everywhere). 
+In the workflow of **Auth engine**, we need to enforce both the privacy and the trust. On one side, the data needs to be transferrred to Auth engine to perform the authentication and computation. The data privacy must be protected. On the other side, Auth engine must enforces that the reports provided by it is trusted.  We uses **Trusted Execution Environment (TEE)** and **cryptographic technology (e.g., secure multi-party computation (sMPC))** to enforce the data privacy and report trust. Details of how our protocol enforces the privacy and trust can be found in [Section 4.4](#4.4. Privacy&Trust, Everywhere). 
 
 
 
@@ -218,7 +218,7 @@ For the access policy check, the policy is uploaded to the marketplace when data
 
 #### 4.2.3.3 Trusted Execution
 
-After verifying both the data and the algorithm, Auth engine will start the data execution. During the execution, the engine needs to enforce both the data privacy and execution correctness. We leverage trusted execution environment (TEE) to acheve them. Auth engine loads both the input data and the algorithm in a TEE instance. Auth3 protocol provides a runtime to run the algorithm directly in SGX-based TEE. More details can be found in [Section XXX]().
+After verifying both the data and the algorithm, Auth engine will start the data execution. During the execution, the engine needs to enforce both the data privacy and execution correctness. We leverage trusted execution environment (TEE) to acheve them. Auth engine loads both the input data and the algorithm in a TEE instance. Auth3 protocol provides a runtime to run the algorithm directly in SGX-based TEE. 
 
 
 
@@ -324,15 +324,47 @@ In this subsection, we divide the data exchanging procedure into four phases: da
 
 ### 4.4.2 Data Storage
 
+In Auth3 protocol, data is only stored in data provider's storage. As mentioned before, the storage can either be an application running in provider's deivce or a third-party service rented by the provider. No matter which solution is chosen, the storage is controlled by the data provider.
 
+Since the plaintext of data is only stored in provider-controlled storage, the data privacy can be easily enforced during data storage phase. Meanwhile, the storage is trusted to the data provider.
 
 
 
 ### 4.4.3 Data Auth 
 
+The data Auth is performed by **Auth engine**. In this phase, Auth3 protocol needs to enforce both the data privacy and the trust of auth result, a.k.a. data report.
+
+**For data privacy**. Auth engine needs to get the data so that it can use Auth functions to calculate the quality score. The engine uses trusted execution environment (TEE) to enforce the data privacy during the execution. A TEE instance is similar as a blackbox, it can forbid any outside components, including the operating system, to access data inside the TEE. 
+
+When a data provider sends data Auth request to an Auth engine, the provider will use remote attestation to confirm whether the Auth engine uses TEE. After the attestation, the data provider builds a secure channel with the TEE instance. Then, provider sends data to the Auth engine through this secure channel. With the above method, the provider can enforce that the data can only be calculated within a TEE instance with specified Auth function. Because of that, the data privacy can be enforced during data Auth.
+
+**For Trust**. Auth3 protocol needs to enforce that the **data report** is trusted and can be verified. To achieve this, Auth engine will generate a pair of keys in the TEE and provided by trusted hardware. After finishing the data Auth, the engine uses the privated key to sign the report.
+
+Anyone can verify the data report by using the public key of the Auth engine. To enforce that correct key can be got, Auth engine will submit its public key to the blockchain when the engine joins the network. Auth3DAO will help to verify that the corresponding private key is protected within a TEE instance. After that, anyone can get the correct public key from the blockchain.
+
+
+
 ### 4.4.4 Project Publication
 
+**For data privacy**. During the project publication, data operator needs to collection all data from different data providers. To protect the data privacy, Auth3 protocol allows data provider to only send data report to the operator, instead of sending plaintext data. 
+
+**For trust**. We need to enforce that the data information provided by data provider is trusted and the published data project from data operator is trusted. For the previous one, Auth3 protocol relies the data report to enforce it. Data operator can use the public key of Auth engine to verify whether the data information is correct.
+
+For the latter one, the data operator needs to aggregate the metadata of all data provider's data. The aggregated metadata can be verified by anyone with the help of the data report, and we also allow the Auth3DAO to perform the verification. The DAO can get all data reports of a data project and verify each data report. After that, they can further verify the aggregated metadata. After the verificaion, the DAO can mark the data project as verified in marketplace. Of couse, anyone can re-produce this verification by herself.
+
+
+
 ### 4.4.5 Data Usage
+
+The last phase is the data usage, in which the consumer can run data usage algorithm on a data project. During this phase, Auth3 protocol needs to enforce both the data privacy and the trust of the returned value.
+
+**For data privacy**. The execution of the data usage is performed in Auth engine. The engine uses TEE to protect the data privacy during the execution. Remote attestation is used to enforce that data will only be sent to a TEE instance of the Auth engine. 
+
+At the same time, the logic inside the TEE instance also checks that whether the data usage algorithm satisfy the access policy of the data project. For example, it the access policy uses whitelist policy, Auth engine will calculate the hash of the used algorithm and check whether the hash value is in the whitelist. If the execution uses ilegal algorithm, Auth engine will abort it.
+
+**For trust**. After the execution, Auth engine will generate a computation report which includes both the used data and algorithm. The report will be signed with the privated key of current Auth engine. With this method, anyone, including the data consmuer, can verify the execution and confirm that the return value is calculated correctly.
+
+
 
 
 ## 4.5 Auth3 DAO
