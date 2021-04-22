@@ -1,8 +1,10 @@
 #Auth3 Whitepaper
 
-##Introduction
+[toc]
 
-##Background & Motivation
+##1. Introduction
+
+##2. Background & Motivation
 
 Web 3.0 has been recogonized as the next station of the Web. It is still being built and there is no established definition of what Web 3.0 is yet. When we are talking about Web 3.0, we are depicting an open, permissionless world with full-decentralization, privacy-preserving and freely value exchange. To truly understand what Web 3.0 can bring to us, we need to figure out what we are facing in the current network.
 
@@ -43,19 +45,25 @@ References
 [COASE1966] "Coase theorem", Wikipedia. https://en.wikipedia.org/wiki/Coase_theorem
 
 
-##High-level architecture
+##3. High-level architecture
 
-###Design Objectives
+###3.1 Design Objectives
 * An open data monetization platform. It aims to provide continuous and sufficient liquidity for data assets, and realize the release and continuous growth of data value.
 * General private data processing scheme. It is not just the secure execution process,  but also the authentication process of data quality under the premise of privacy protection.
 * Transparent and secure data aggregation and operation mechanism. It decouples data control and data operation by introducing experts or building automatic operation tools to guide data providers to build truly valuable data sets and coordinate data supply and demand.
 * Flexible and extensible marketplace. According to different data types and data scenarios, it should be allowed to create different market tools to provide users (e.g., data providers, data consumers, data operators...) with a simpler way to participate. 
 
-###The Architecture
+###3.2 The Architecture
 The high-level system design of Auth3 is shown in Figure 1, the kernel of Auth3 network consists of three modules:
 
-<img src="./images/arch.png" width="100%">
-<center>Figure 1: The architecture</center>
+
+<div align=center>
+<img src="./images/arch.png" width="90%">
+</div>
+
+<center> <b>Figure 1: The architecture</b></center>
+<br />
+
 * As the initiator of data projects, **Data Operator** will carry out a series of work related to data set construction, operation and maintenance, including defining data standards, data auth functions and other operation strategies. In the mean time, as the issuer of data token, **Data Operator** will choose (or design by itself) an appropriate economic model to tokenize the data set that it operates, and coordinate various roles in the data market. The source data may not belong to **Data Operator**, but **Data Operator** will determine the operation strategy, revenue distribution rules and other rights of data. At the beginning of Auth3 project, we plan to encourage people or institutions with operation experience in various data fields to act as early data operators. In the future, the community can spontaneously set up automatic operation facilities to build data projects after various market tools become mature. 
 
 * **Auth Engine**, as a reliable neutral party, will undertake two main responsibilities: data authentication and secure execution. **Auth Engine** runs in the environment protected by TEE (Trust Execution Environment) to ensure the privacy and integrity of internal execution process. On the one hand, the data authentication process will execute the auth function defined by **Data Operator**, accept the source data from the data provider through a secure channel, and return the authentication result to **Data Operator** as basis for data value evaluation. On the other hand, **Auth Engine** will provide a general secure computing environment that is used to execute the algorithm defined by the consumer ensuring that the data is used without disclosure.
