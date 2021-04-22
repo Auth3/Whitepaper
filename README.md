@@ -335,4 +335,34 @@ In this subsection, we divide the data exchanging procedure into four phases: da
 ### 4.4.5 Data Usage
 
 
+## 4.5 Auth3 DAO
+Auth3 DAO's goal is to make Auth3 grow into an energetic, powerful and anti-fragile data ecosystem and keep improving for decades across bulls and bears. This goal requires an autonomous and self-sustained governance mechanism and needs each community member to participate in. We hope the detailed rules and implementation measures will be discussed, innovated and voted by the wisdom of the community, we just provide principled recommendations here.
+
+For healthy and long-term growth of Auth3, we should have both supervision and grant mechanism for the ecosystem.
+
+## 4.5.1 Supervision DAO
+Auth3 aims to break data silos, unleash data, create incremental values for modern commercial activities and help users get rewards that they deserve, but by no means the channel for gathering or propagating illegal information.
+
+At the first stage, we shall publish a draft proposal of data regulations that may indicate what kind of data or data sources are forbidden, as well as rules of incentives and penalties. Then we will set up a compliance committee, of which all members are elected from the community. Committee members need to stake Auth3 tokens for the right of voting or initiating a vote. Similarly, the Data Operator has to stake a certain number of Auth3 tokens when launch a data project, and he should be the first responsible person for the project compliance.
+
+Once a data project is detected and reported due to violation, the committe shall initiate a vote (any member can perform this action) for the project, if passed and the violation behavior is confirmed, the operator will be fined and the commitee members who voted for violation will be rewarded.
+
+The committee is also responsible for the iterative refinement of the data regulations and incentive mechanisms. We expect the committee to be a powerful safeguard for the healthy and sustainable growth of Auth3.
+
+## 4.5.2 Grant DAO
+We also need a grant mechanism to incentivize all kinds of contributions to Auth3 data ecosystem, which may includes:
+
+* The development and improvement of Auth3's core architecture, such as the auth engine, data marketplace, privacy-enhanced stoarge protocol, etc.
+* Enrich the surrounding ecology, including various data applications or DeFi applications into Auth3.
+* Improvement of staking and usage volumes of data, specifically introducing more data provider, consumers, as well as algorithm providers into the network.
+* Positive publicity, promotion, outreach for Auth3.
+* Contributions and improvements to Auth3 DAO.
+
+The income of Auth3 DAO comes from the network rewards and network revenue. Auth3 DAO helps to close the value circulation loop of Auth3: more fund flows into Auth3 DAO, more prosperous the ecosystem will get, which leads to more usage of the network and growth in the value of Auth3, thus will bring more network revenue. A certain proportion of the revenue will go back to Auth3 DAO for incentives, which completes the loop.
+
+
+# 5. Auth3 incentive model
+
+
+
 
