@@ -1,5 +1,9 @@
 # Auth3 Whitepaper
 
+**April 21. 2021**
+
+**PLEASE NOTE: This is an unfinished version and there will be further changes in both technical design and economic model.**
+
 [toc]
 
 # 1. Introduction
@@ -365,14 +369,121 @@ At the same time, the logic inside the TEE instance also checks that whether the
 **For trust**. After the execution, Auth engine will generate a computation report which includes both the used data and algorithm. The report will be signed with the privated key of current Auth engine. With this method, anyone, including the data consmuer, can verify the execution and confirm that the return value is calculated correctly.
 
 
+## 4.5 Auth3 Marketplace
+
+Auth3 market is a vendor-neutral reference data marketplace for use by the Auth3 community. It consists of small markets centered around a data token. People issue or buy and consume data token in the market. It’s decentralized (no single owner or controller), and non-custodial (only the data owner holds the keys for the data tokens).
+
+### 4.5.1 Market role
+* **Data provider** Data provider provides data token to data operator. Data operator can also issue data tokens. (**Remain to be discussed**)
+* **Data operator** Data operator packs up data to form a data set, and select economic models to issue and sell data tokens.
+* **Data consumer** Data consumer buys and consumes data tokens. Data consumer can be divided into two groups, one is merchants and the other is individuals. 
+* **Liquidity provider** They provide liquidity to pools and receive liquidity rewards.
+
+### 4.5.2 Two markets
+1. **The market where data providers provide data to operators**
+We will set a basic price for each type of data, and at the same time estimate the data provided by the data provider based on the system's rating of the data when the user uploads it. The data provider can use this valuation as a reference price. If you choose to price based on the reference value, you can establish a connection with the data set on the market and add it to the data set for profit. (In other words, the bid price of each data set by the operator is equal to the reference price given by the system)
+
+2. **The market where data operators trade with consumers**
+Data operators need to select economic model to issue data tokens.
+
+### 4.5.3 Auth3 market tools
+Auth3 provides a large infrastructure panel which aggregates a variety of tools, code templates.
+
+#### 4.5.3.1 Basic tools：
+We analyze the existing models in the market from the two links of production and consumption:
+
+#####  Production process
+In the production process, three aspects of issuance, transaction, and pricing are involved. We analyze the existing models in the market from these three aspects and give our recommendations based on the attributes of the data tokens.
+
+###### 1. Issue
+We divide the issuance stage into the initial issuance stage and the subsequent issuance stage, and analyze these two separately:
+* **Initial issuance**：The classification standard is whether there is reserve support.
+
+  + No need for initial capital: 
+  Initial Coin Offering (ICO); 
+  Initial Exchange Offering requires payment to the centralized exchange, while on a decentralized exchange such as Uniswap, no payment is required, but project needs to add their tokens and the other tokens with the same value into the liquidity pool.
+
+  + Need for initial capital：
+  **Balancer’s LBP**: LBP is designed to minimize volatility and prevent front-running and price speculation by automatically adjusting the weights down during a token launch. LBPs are open and accessible for all to use, and allow teams to release a token project while building liquidity. This method also allows a project to set their own ratio of initial capital allocated to the sale. To begin a LBP, project needs to put a certain amount of reserves and their tokens into the pool.
+  **Bonding curve**: The project doesn’t need to put in reserves  
+
+* **Follow-on offering**: The classification standard is whether it supplies on demand.
+
+  + **Limited quantity**：ICO, IEO, Balancer and so on
+  + **Unlimited quantity**：Bonding curve
+
+Auth3’s market tools enable operators to use any of the above methods to issue data tokens. At the same time, considering projects’ different requirements, we recommend:
+* For project who wants to issue on demand, we recommend bonding curve, of which Bancor is the earliest practice of it; 
+* For project who wants to prevent front-running and price speculation, we recommend to use Balancer’s LBP. In the Auth3 Market GUI, the user adds liquidity then invokes pool creation; the GUI’s React code calls the Auth3 JavaScript library, which calls Balancer Factory to deploy a Balancer BPool contract.
+
+###### 2. Trade
+
+In finance, there are three trading systems: inquiry, quotation, and bidding. The bidding trading system brings the order book matching trading (belonging to two-way bidding), market maker trading (belonging to two-way bidding), and auction (belonging to one-way bidding). In blockchain, an innovate project called Bancor which is the first AMM (Automated Market Maker) brings an innovation to the traditional market maker.
+
+<div align=center>
+<img src="./images/market.png" width="90%">
+</div>
+
+<center> <b>Figure. The evolution of trading system in the financial market</b></center>
+<br />
+
+In blockchain, order book, auction and market maker are most popular. Let’s review each.
+
+1. **Order book**: The liquidity is not good, and it is not suitable for long-tail tokens such as data. 
+2. **Auction mode**: Auctions occur over a time interval. Therefore, the auction is slow and liquidity is poor.
+3. **Market maker, especially AMM**: The traditional market maker model needs to have strong capital reserves, strong resistance to risks, and resistance to extremely short unilateral market conditions. AMM has innovated the traditional market maker model so that risks are diversified and shared.
+
+Auth3's market tools allow operators to trade data tokens using any of the above methods. But we recommend: AMM and order book should exist at the same time. AMM has more liquid. But AMM's price discovery mechanism has problems. The order book has poor liquidity, but the price discovery is more in line with the market. Therefore, the two must exist at the same time and have complementary advantages. (For AMM, we recommend bancorV2, or to wait for uniswapV3)
+
+###### 3. Pricing
+
+We divide the trading methods into several categories from the perspective of planning and market.
+
+1. **Fixed Pricing**: Users can sign a simple contract to buy/sell Auth3 data tokens.
+
+2. **Market Pricing**: 
+* Order book. The order book requires real buy and sell orders as counterparties. Therefore, we do not recommend using the order book to price when liquidity is small.
+
+* Auction. Auction is very suitable to the initial market price discovery, but the price discovery is inefficient. As for data with fast liquidity, we do not recommend auction pricing model for data tokens.
+
+3. **Automated Pricing**:
+For example, Uniswap realizes automatic pricing through x*y=k, Balancer LBP smart pool realizes automatic pricing by dynamically adjusting the ratio of reserves according to a curve that is artificially set, and Bancor realizes automatic pricing through bonding curve where the ratio of connecter tokens and smart tokens is set by R=FPS. 
+
+Auth's market tools allow operators to use any of the methods to price data tokens, but because of the strong liquidity of data tokens, we recommend automatic pricing most.
 
 
-## 4.5 Auth3 DAO
+#####  Consumption process
+In addition to production process, the other process is consumption. After buying data token from data operator, data consumer needs to consume data token to get data. There are two way to consume data token.
+
+* **Rent** Data consumer can use the data when holding the data token. It can be sold on the market at any time after the use process is over. Because data token only represents the sale of the data-use rights, consumer should pay rent according to the time of holding. The rent is given to the operator and distributed to the provider according to a ratio which is set by the operator.
+
+* **Burn** The consumer needs to burn the token that he holds, to get access to the data. The burning is instantly set off when the consumer uses the data, but the whole burning will last until the processing of data is over.
+
+Auth's market tools allow operators to set any of the methods to let consumers consume data tokens.
+
+#### 4.5.3.2 Derivative  tools：
+
+Data can be regarded as an asset class for Defi. For example, data can be securitized and used as collateral.
+
+
+### 4.5.4 Market supplement 
+
+#### 4.5.4.1 Visual interface 
+According to some indicators such as value, Auth3 will list a list of high-quality data projects for the data provider to help them select suitable projects to add their own data. 
+#### 4.5.4.2 Code Reference 
+Auth3 provides code reference to simplify the construction of the user’s (data operator) data market.
+#### 4.5.4.3 Support for innovation of markets tools
+We encourage users to create new markets tools with Auth3 token incentives. After the new economic model has passed certain standards (Auth3 audit + DAO), it can be added to Auth3 market’s tool panel.
+
+
+
+
+## 4.6 Auth3 DAO
 Auth3 DAO's goal is to make Auth3 grow into an energetic, powerful and anti-fragile data ecosystem and keep improving for decades across bulls and bears. This goal requires an autonomous and self-sustained governance mechanism and needs each community member to participate in. We hope the detailed rules and implementation measures will be discussed, innovated and voted by the wisdom of the community, we just provide principled recommendations here.
 
 For healthy and long-term growth of Auth3, we should have both supervision and grant mechanism for the ecosystem.
 
-## 4.5.1 Supervision DAO
+## 4.6.1 Supervision DAO
 Auth3 aims to break data silos, unleash data, create incremental values for modern commercial activities and help users get rewards that they deserve, but by no means the channel for gathering or propagating illegal information.
 
 At the first stage, we shall publish a draft proposal of data regulations that may indicate what kind of data or data sources are forbidden, as well as rules of incentives and penalties. Then we will set up a compliance committee, of which all members are elected from the community. Committee members need to stake Auth3 tokens for the right of voting or initiating a vote. Similarly, the Data Operator has to stake a certain number of Auth3 tokens when launch a data project, and he should be the first responsible person for the project compliance.
@@ -381,7 +492,7 @@ Once a data project is detected and reported due to violation, the committe shal
 
 The committee is also responsible for the iterative refinement of the data regulations and incentive mechanisms. We expect the committee to be a powerful safeguard for the healthy and sustainable growth of Auth3.
 
-## 4.5.2 Grant DAO
+## 4.6.2 Grant DAO
 We also need a grant mechanism to incentivize all kinds of contributions to Auth3 data ecosystem, which may includes:
 
 * The development and improvement of Auth3's core architecture, such as the auth engine, data marketplace, privacy-enhanced stoarge protocol, etc.
@@ -393,8 +504,34 @@ We also need a grant mechanism to incentivize all kinds of contributions to Auth
 The income of Auth3 DAO comes from the network rewards and network revenue. Auth3 DAO helps to close the value circulation loop of Auth3: more fund flows into Auth3 DAO, more prosperous the ecosystem will get, which leads to more usage of the network and growth in the value of Auth3, thus will bring more network revenue. A certain proportion of the revenue will go back to Auth3 DAO for incentives, which completes the loop.
 
 
-# 5. Auth3 incentive model
+# 5. Token economics
 
+## 5.1 The value of Auth3 token
 
+* **Governance** Auth3 token is a governance token to vote in Auth3 DAO. 
+* **Fees** Data operators need to pay Auth3 tokens to issue data tokens. They need to pay an Auth3 as a reserve before the issuance. The following two situations will deduct a certain share from the reserve: 
+  - The issuance of data tokens could involve some issues. For example, the data contains pornographic photos. Once a problem occurs, the fine will be deducted from the data operator’s reserve and paid to the supervisor, etc.
+  - The issuance of data token needs to be audited, so the operator needs to pay the auditors. The fees will be deducted from the data operator’s reserve.
+* **Liquidity mining**  Auth3 will set four pools ETH/AUTH3、USDC/ AUTH3、USDT/ AUTH3、DAI/ AUTH3 for Auth3 mining. The Auth3 mining rewards are distributed to liquidity providers in proportion to the proportion of liquidity provided. Afterwards, the voting governance of the Auth3 project will be launched. The holders of Auth3 tokens can vote to decide whether to add other liquid pools for liquidity mining.
 
+##5.2 Rules of early token distribution
 
+The initial minting of Auth3 is 1 billion, and the initial supply will be distributed in the next 4 years. After 4 years, Auth3 will start to continue to inflate at 2% per year to ensure that there is a sufficient amount of Auth3 to motivate users who participate and contribute to the development of the project.
+
+### 5.2.1 Distribution by value
+1. 70% distributed to Auth3 community members
+* Network revenue
+* Reserve to ensure the progress of other distribution plans such as donations from contributors, community initiatives, liquidity mining, etc. 
+  * Token incentives for developers
+  * Liquid mining (currently set to open for one year, accounting for 1%) 
+
+2. 10% distributed to team members
+3. 5% will be distributed to project investors
+4. 10% ICO/IEO/IDO
+5. 5% Foundation reseved
+
+### 5.2.2 Distribution by time
+* 40% of the reserved total will be unlocked in the first year
+* Unlock 30% in the second year
+* Unlock 20% in the third year
+* Unlock 10% in the fourth year

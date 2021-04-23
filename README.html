@@ -1,0 +1,781 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/yuanrui/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.11/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="auth3-whitepaper">Auth3 Whitepaper</h1>
+
+<p><strong>April 21. 2021</strong></p>
+<p><strong>PLEASE NOTE: This is an unfinished version and there will be further changes in both technical design and economic model.</strong></p>
+<ul>
+<li><a href="#auth3-whitepaper">Auth3 Whitepaper</a></li>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-background-motivation">2. Background &amp; Motivation</a>
+<ul>
+<li><a href="#challenges">Challenges</a></li>
+<li><a href="#auth3-wants-to-make-a-change">AUTH3 wants to make a change</a></li>
+<li><a href="#values">Values</a></li>
+</ul>
+</li>
+<li><a href="#3-high-level-architecture">3. High-level architecture</a>
+<ul>
+<li><a href="#31-design-objectives">3.1 Design Objectives</a></li>
+<li><a href="#32-the-architecture">3.2 The Architecture</a></li>
+</ul>
+</li>
+<li><a href="#4-building-blocks">4. Building Blocks</a>
+<ul>
+<li><a href="#41-overview">4.1 Overview</a></li>
+<li><a href="#42-auth-engine">4.2 Auth Engine</a>
+<ul>
+<li><a href="#421-what-is-auth-engine">4.2.1 What is Auth Engine&#xFF1F;</a></li>
+<li><a href="#422-data-auth">4.2.2 Data Auth</a>
+<ul>
+<li><a href="#4221-auth-function">4.2.2.1 Auth Function</a></li>
+<li><a href="#4223-data-authenticity">4.2.2.3 Data Authenticity</a></li>
+<li><a href="#4222-data-report">4.2.2.2 Data Report</a></li>
+</ul>
+</li>
+<li><a href="#423-computation-auth">4.2.3 Computation Auth</a>
+<ul>
+<li><a href="#4231-data-verification">4.2.3.1 Data Verification</a></li>
+<li><a href="#4232-algorithm-verification">4.2.3.2 Algorithm Verification</a></li>
+<li><a href="#4233-trusted-execution">4.2.3.3 Trusted Execution</a></li>
+<li><a href="#4234-computaion-report">4.2.3.4 Computaion Report</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#43-data-operator">4.3 Data Operator</a>
+<ul>
+<li><a href="#431-launching-data-project">4.3.1 Launching Data Project</a>
+<ul>
+<li><a href="#4311-data-format">4.3.1.1 Data Format</a></li>
+<li><a href="#4312-auth-function">4.3.1.2 Auth Function</a></li>
+<li><a href="#4313-access-policy">4.3.1.3 Access Policy</a></li>
+</ul>
+</li>
+<li><a href="#432-data-collection">4.3.2 Data Collection</a></li>
+<li><a href="#433-publishing-data-project">4.3.3 Publishing Data Project</a></li>
+</ul>
+</li>
+<li><a href="#44-privacytrust-everywhere">4.4. Privacy&amp;Trust, Everywhere</a>
+<ul>
+<li><a href="#441-overview">4.4.1 Overview</a></li>
+<li><a href="#442-data-storage">4.4.2 Data Storage</a></li>
+<li><a href="#443-data-auth">4.4.3 Data Auth</a></li>
+<li><a href="#444-project-publication">4.4.4 Project Publication</a></li>
+<li><a href="#445-data-usage">4.4.5 Data Usage</a></li>
+</ul>
+</li>
+<li><a href="#45-auth3-marketplace">4.5 Auth3 Marketplace</a>
+<ul>
+<li><a href="#451-market-role">4.5.1 Market role</a></li>
+<li><a href="#452-two-markets">4.5.2 Two markets</a></li>
+<li><a href="#453-auth3-market-tools">4.5.3 Auth3 market tools</a>
+<ul>
+<li><a href="#4531-basic-tools">4.5.3.1 Basic tools&#xFF1A;</a>
+<ul>
+<li><a href="#production-process">Production process</a>
+<ul>
+<li><a href="#1-issue">1. Issue</a></li>
+<li><a href="#2-trade">2. Trade</a></li>
+<li><a href="#3-pricing">3. Pricing</a></li>
+</ul>
+</li>
+<li><a href="#consumption-process">Consumption process</a></li>
+</ul>
+</li>
+<li><a href="#4532-derivative-tools">4.5.3.2 Derivative  tools&#xFF1A;</a></li>
+</ul>
+</li>
+<li><a href="#454-market-supplement">4.5.4 Market supplement</a>
+<ul>
+<li><a href="#4541-visual-interface">4.5.4.1 Visual interface</a></li>
+<li><a href="#4542-code-reference">4.5.4.2 Code Reference</a></li>
+<li><a href="#4543-support-for-innovation-of-markets-tools">4.5.4.3 Support for innovation of markets tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#46-auth3-dao">4.6 Auth3 DAO</a></li>
+<li><a href="#461-supervision-dao">4.6.1 Supervision DAO</a></li>
+<li><a href="#462-grant-dao">4.6.2 Grant DAO</a></li>
+</ul>
+</li>
+<li><a href="#5-token-economics">5. Token economics</a>
+<ul>
+<li><a href="#51-the-value-of-auth3-token">5.1 The value of Auth3 token</a></li>
+<li><a href="#52-rules-of-early-token-distribution">5.2 Rules of early token distribution</a>
+<ul>
+<li><a href="#521-distribution-by-value">5.2.1 Distribution by value</a></li>
+<li><a href="#622-distribution-by-time">6.2.2 Distribution by time</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 class="mume-header" id="1-introduction">1. Introduction</h1>
+
+<h1 class="mume-header" id="2-background-motivation">2. Background &amp; Motivation</h1>
+
+<p>Web 3.0 has been recogonized as the next station of the Web. It is still being built and there is no established definition of what Web 3.0 is yet. When we are talking about Web 3.0, we are depicting an open, permissionless world with full-decentralization, privacy-preserving and freely value exchange. To truly understand what Web 3.0 can bring to us, we need to figure out what we are facing in the current network.</p>
+<h2 class="mume-header" id="challenges">Challenges</h2>
+
+<p>From Web 1.0 to Web 2.0, centralized intermediaries brought us efficient, intensive and full-featured platforms and services to coordinate, interact and trade with other counterparties. People get used to this and enjoy the convenience. However, everything comes at a price. We get more dependent on these powerful intermediaries and would like to provide our personal data and information freely. As the owner of these data, we become the property of those companies and organizations. Our data makes great profits, yet we get nothing but risk of privacy exposure and invasion.</p>
+<p>Concretely, personal data intrinsically contains tremendous value, e.g., the user labels and portraits are essential support for industries including advertising, insurance, medical and artificial intelligence, which brings a $trillion-level marketplace. Due to lack of effective and legal ways for data usage, the value is dramatically constrained and distributed inequitably.</p>
+<ul>
+<li>User&apos;s multi-dimensional data is scattered across various Internet companies.</li>
+<li>The powerful companies force users to authorize and make money of these data.</li>
+<li>Users are completely unconscious of how the data is spreaded and used.</li>
+<li>There is no clear responsibilities for accidents such as users&apos; data loss or leakage, which has actually happened frequently.</li>
+</ul>
+<h2 class="mume-header" id="auth3-wants-to-make-a-change">AUTH3 wants to make a change</h2>
+
+<p>According to Coase theorem[COASE1966], we know that when the transaction cost is zero or low enough, no matter who the original owner of the resource is, the resource will finally flow to the most valuable usage scenario. This explains why the huge amount of data is handled by a set of centralized entities, cuz they know how to explore the value of data efficiently. In another aspect, the data scattered across the Internet results in plenty of data silos, which notably impedes the exploitation of valuable data.</p>
+<p>Given all above, the ultimate goal of AUTH3 is to unleash the value of data, help people discover, aggregate and equitably exchange their authentic data assets, connect people and data around the world. In AUTH3, you will 1) own your data, 2) control your data, 3) entitled to sell the right of your data usage without disclosure your privacy and get paid for that. To achieve this, we will replace the current excessive centralization by a truly decentralized, autonomous and privacy-preserved marketplace, where:</p>
+<ul>
+<li>Data sovereignty and the right for usage are decoupled completely.</li>
+<li>Data is monetized into Data Tokens, which can be circulated for transaction and consumption of the data assets, by leveraging the booming DeFi like AMM[1] DEX[2].</li>
+<li>People can launch a data project, mint data tokens, and appeal for data provision (aka data staking), or can join a data project, provide/stake data as required. They earn data tokens as rewards.</li>
+<li>Data must always be authorized by the owners, and the data is verified to be authentic and not tampered by using privacy computing technology like TEE, MPC and federated learning.</li>
+<li>Privacy computing technology is also utilized to guarantee that &quot;data is usable but not visible&quot;, which means the data itself is not directly shared but rather the comuting value.</li>
+<li>Data always stays on-premise, with full compliance with the data protection regulations like GDPR, CCPA, Data Security Law of the People&#x2019;s Republic of China, etc.</li>
+</ul>
+<h2 class="mume-header" id="values">Values</h2>
+
+<p>AUTH3 is not only a network for the future, it&apos;s also</p>
+<ul>
+<li>A revolution for the fight for data sovereignty, the new paradigm of data circulation and transaction, and entirely release of data values.</li>
+<li>A community comprised of different people, enterprises and organizations, where every single one can coordinate and meet their data requirements, exchange data assets in an equitable and autonomous way.</li>
+<li>An ecosystem that sustainably spreads values and keeps long-term &amp; healthy growing, via a community self-governed supervision and grant mechanism called Auth3 DAO.</li>
+</ul>
+<p>[1] As known as &quot;Automated Market Maker&quot;<br>
+[2] As known as &quot;Decentralized Exchange&quot;<br>
+References<br>
+[COASE1966] &quot;Coase theorem&quot;, Wikipedia. <a href="https://en.wikipedia.org/wiki/Coase_theorem">https://en.wikipedia.org/wiki/Coase_theorem</a></p>
+<h1 class="mume-header" id="3-high-level-architecture">3. High-level architecture</h1>
+
+<h2 class="mume-header" id="31-design-objectives">3.1 Design Objectives</h2>
+
+<ul>
+<li>An open data monetization platform. It aims to provide continuous and sufficient liquidity for data assets, and realize the release and continuous growth of data value.</li>
+<li>General private data processing scheme. It is not just the secure execution process,  but also the authentication process of data quality under the premise of privacy protection.</li>
+<li>Transparent and secure data aggregation and operation mechanism. It decouples data control and data operation by introducing experts or building automatic operation tools to guide data providers to build truly valuable data sets and coordinate data supply and demand.</li>
+<li>Flexible and extensible marketplace. According to different data types and data scenarios, it should be allowed to create different market tools to provide users (e.g., data providers, data consumers, data operators...) with a simpler way to participate.</li>
+</ul>
+<h2 class="mume-header" id="32-the-architecture">3.2 The Architecture</h2>
+
+<p>The high-level system design of Auth3 is shown in Figure 1, the kernel of Auth3 network consists of three modules:</p>
+<div align="center">
+<img src="./images/arch.png" width="90%">
+</div>
+<center> <b>Figure 1: The architecture</b></center>
+<br>
+<ul>
+<li>
+<p>As the initiator of data projects, <strong>Data Operator</strong> will carry out a series of work related to data set construction, operation and maintenance, including defining data standards, data auth functions and other operation strategies. In the mean time, as the issuer of data token, <strong>Data Operator</strong> will choose (or design by itself) an appropriate economic model to tokenize the data set that it operates, and coordinate various roles in the data market. The source data may not belong to <strong>Data Operator</strong>, but <strong>Data Operator</strong> will determine the operation strategy, revenue distribution rules and other rights of data. At the beginning of Auth3 project, we plan to encourage people or institutions with operation experience in various data fields to act as early data operators. In the future, the community can spontaneously set up automatic operation facilities to build data projects after various market tools become mature.</p>
+</li>
+<li>
+<p><strong>Auth Engine</strong>, as a reliable neutral party, will undertake two main responsibilities: data authentication and secure execution. <strong>Auth Engine</strong> runs in the environment protected by TEE (Trust Execution Environment) to ensure the privacy and integrity of internal execution process. On the one hand, the data authentication process will execute the auth function defined by <strong>Data Operator</strong>, accept the source data from the data provider through a secure channel, and return the authentication result to <strong>Data Operator</strong> as basis for data value evaluation. On the other hand, <strong>Auth Engine</strong> will provide a general secure computing environment that is used to execute the algorithm defined by the consumer ensuring that the data is used without disclosure.</p>
+</li>
+<li>
+<p><strong>Marketplace</strong> is the place for data value circulation where <strong>Data Operator</strong> can start data projects and issue data tokens, and data consumers can issue data requests and complete the secure computation of data. It will provide a series of market tools (such as token framework, transaction pools, board, etc.) to help <strong>Data Operator</strong>  build a dynamic data market. <strong>Marketplace</strong> should be a sustainable system. All kinds of infrastructure of Auth3 will provide powerful help for it, and the revenue generated in <strong>Marketplace</strong> will be partly used to feedback these participants in turn.</p>
+</li>
+</ul>
+<p>The outside part in Figure 1 is the users of Auth3 network, including <strong>data provider</strong>, <strong>data consumer</strong> and liquidity provider. <strong>Data provider</strong> can be large institutions or just individuals, who will continue to gain benefits by providing verifiable valuable data. <strong>Data consumers</strong> can explore valuable data in various kinds of data markets and pay the corresponding data token to obtain the access rights of the data. This revenue will be mainly distributed to the <strong>data provider</strong>, and the other part will be used to feedback other contributors in the network. <strong>Liquidity provider</strong> will provide liquidity for all kinds of data tokens in the network by staking Auth3 token, and obtain liquidity reward.</p>
+<h1 class="mume-header" id="4-building-blocks">4. Building Blocks</h1>
+
+<h2 class="mume-header" id="41-overview">4.1 Overview</h2>
+
+<p><img src="./images/4-techoverview.jpeg" alt="image-20210420152058393"></p>
+<p>This section introduces the technical part of <strong>Auth3 protocol</strong>, whose overview is shown in the above figure. The key roles (or components) of Auth3 are:</p>
+<ul>
+<li>
+<p><strong>Data Provider</strong>: To provide data in Auth3 protocol, data provider (also called <strong>DP</strong>) needs to run two components: <strong>user client</strong> and a <strong>storage</strong>. The previous one is provided by Auth3 protocol and is used to communicate with other components in Auth3 network (e.g., the Auth Engine). The later one is used to save the user data and this component is constructed by the DP. For example, it can be an application running on DP&apos;s machine or a third-party service which is rented by the DP. DP&apos;s data will only stored in the <strong>DP-controlled storage</strong> to enforce data privacy.</p>
+</li>
+<li>
+<p><strong>Data Operator</strong>: The role who helps multiple data providers to aggregate their data and publish them on Auth3 network. Data operator needs to validate the value of aggregated data and publish the data token. Auth3 protocol provides tools to perform these behaviors (details can be found in [Section 4.3](#4.3 Data Operator)).</p>
+</li>
+<li>
+<p><strong>Auth Engine</strong>: It is an important component in Auth3 network. During data assets publication, Auth Engine verified the ownership and value of the data. During data exchanging, it protects and verifies the exchange procedure. We will introduce details about Auth Engine in [Section 4.2](#4.2 Auth Engine).</p>
+</li>
+<li>
+<p><strong>Marketplace</strong>: It is a decentralized market for publishing, discovering and exchanging data assets. Marketplace is consist of multiple onchain smart contracts, which implements the service logics. Besides them, we will also provide several frontend window (e.g., applications or website) for different roles to interact with the market place.</p>
+</li>
+<li>
+<p><strong>Data Consumer and Algorithm</strong>: The role who pays for the data and consums the value of data. Auth3 protocol provides <strong>client</strong> for the consumer to burn the data token and use the data. In our protocol, consumer needs to leverage a <strong>data-usage algorithm</strong> to use the data, and get the result returned by the algorithm. The execution will be performed in <strong>Auth engine</strong> to enforce the data privcay.</p>
+<p>The data-usage algorithm can be implemented by any developer or the consumer herself. <strong>Auth3DAO</strong> will audit the algorithm ([Section 4.5](#4.5 Auth3 DAO)) and <strong>data operator</strong> could deployed access policy to specify which algorithm can be used on her data project ([Section4.3](#4.3 Data Operator)).</p>
+</li>
+</ul>
+<h2 class="mume-header" id="42-auth-engine">4.2 Auth Engine</h2>
+
+<h3 class="mume-header" id="421-what-is-auth-engine">4.2.1 What is Auth Engine&#xFF1F;</h3>
+
+<p>The main goal of Auth3 protocol is to aggregate data assets from different people and help peoples to exchange their data assets.  During the data assets exchanging, a key problem is &quot;<strong>How to provide the authentication for data assets ?</strong>&quot;. Once we try to transfer data to data asset, the intellectual property (IP), authenticity and quality need to be verified, specially for the personal data. In our protocol,  <strong>Auth engine</strong> takes responsibility to perform the authentication.</p>
+<p>To perform authentication in the whole lifecycle of data assets exchanging, Auth engine provides two kinds of functionalities:</p>
+<ul>
+<li>
+<p><strong>Data Auth</strong>: Before we try to exchange something, we must confirm its ownership and the value. For the data asset, we should verified its ownership, as well as its authenticity and quality. Because of that, Auth engine will perform <em>Data Auth</em>, which verifies the data intellectual property (a.k.a. the data owner), the authenticity of data and the quality of the data. Auth engine will generate a <strong>data report</strong> for the verified data asset. Thereafter, anyone can evaluate the ownership and value of the data asset by verifying its <strong>data report</strong>.</p>
+</li>
+<li>
+<p><strong>Computation Auth</strong>: After the data asset has been authenticated, it can be exchanged. The exchanging procedure itself should be authenticated. Auth engine provides <em>Computation Auth</em> to protect the whole data exchanging procedure, from data feeding to result returning. In <strong>Auth3</strong>, data assets are exchanged by computation with data-usage algorithm. Becore the execution, <strong>Computation Auth</strong> will validate the exchanged data and the algorithm. During the execution, it enforces that the execution-flow cannot be tampered with, and the return value is generated from the exchanged data and algorithm. Finally, <strong>Computation Auth</strong> provides an <strong>execution report</strong> to proof these authentication. <strong>Data consumer</strong> can validate the computation by checking this report.</p>
+</li>
+</ul>
+<p>In the workflow of <strong>Auth engine</strong>, we need to enforce both the privacy and the trust. On one side, the data needs to be transferrred to Auth engine to perform the authentication and computation. The data privacy must be protected. On the other side, Auth engine must enforces that the reports provided by it is trusted.  We uses <strong>Trusted Execution Environment (TEE)</strong> and <strong>cryptographic technology (e.g., secure multi-party computation (sMPC))</strong> to enforce the data privacy and report trust. Details of how our protocol enforces the privacy and trust can be found in [Section 4.4](#4.4. Privacy&amp;Trust, Everywhere).</p>
+<h3 class="mume-header" id="422-data-auth">4.2.2 Data Auth</h3>
+
+<p>As mentioned above, the main goal of data auth is to verify the ownership, authenticity and quality of the data asset, and to generate a report to proof the notarization. Verification on the ownership and authenticity could be a generic task. However, the quality of data highly depends on the type of the data and the application scenario. To perform notarization on data quality, Auth3 protocol provide <strong>Auth Function (AF)</strong> method.</p>
+<p>In this subsection ,we will first introduce how to use Auth function to evaluate the quality of data asset. After that, we introduce how to verify the data ownership and the authenticity. Finally, we introduce how Auth engine generates the <strong>data report</strong>.</p>
+<h4 class="mume-header" id="4221-auth-function">4.2.2.1 Auth Function</h4>
+
+<p><strong>Why need Auth function?</strong></p>
+<p>Auth function is used to evaluate the quality of data, which is criticial in Auth3 protocol.  Whenever a data provider try to add her data into a data project, she needs to provide the data quality evaluated by specified Auth function. Data operator only accepts the data which satisfies the quality requirement. After the data project is published, anyone can verify the data quality by checking the data quality filed in data report.</p>
+<p><strong>Where does Auth function come from?</strong></p>
+<p>For different data types and application scenarios, the data quality needs to be evaluated with different methods, which requires different auth functions. Because of that, <strong>Auth3 protocol</strong> itself only provides limited basic auth function, and requires the data operator to provide auth functions for evaluating specific data characteristics.</p>
+<p>When the data operator launchs a data project, her needs to specify the required characteristics for joined data. For each data characteristic, data operator needs to implement an Auth function to evaluate it. During the project launching, data operator should upload the characteristic requirements and the corresponding Auth functions on the distrubuted marketplace.</p>
+<p><strong>How does Auth function work?</strong></p>
+<p>Whenever a data provider wants to join a data project, she could find the characteristic requirements and the Auth functions from the marketplace. After that, data provider could send her data to an Auth engine, together with the ID of Auth functions used to evaluate the data. Once receiving the request, Auth engine will download the Auth functions from the blockchain, use it to evaluate the quality of data, and genearte a <strong>data report</strong>.</p>
+<p>Finally, data provider can send the <strong>data report</strong> to the data operator, for joining the target data project. With help of the report, <strong>data operator</strong> could verify whether the data satisfies the requirement and decide whether to accept the join request.</p>
+<p><strong>What is Auth function?</strong></p>
+<p>Let&apos;s dig a little deeper. An <strong>Auth function (AF)</strong>  is consist of two parts:  <strong>AF algorithm</strong> and <strong>AF spec</strong>. AF algorithm is a piece of code which receives the data as an input and calculates a quality score. During the data auth, Auth engine will download and run the AF algorithm. We will allow data operators to implement the AF algorithm with high-level language, e.g., Python or Rust.</p>
+<p>On the other side , <strong>AF spec</strong> is a specification of the Auth function, which introduces the characteristic evaluated by the Auth function, the evaluation method and the required input of AF algorithm. In the specification, an important part is the input requirement. It specifies the format of the evaluated data. For example, it could specify that the input data must be json format and specify the filed names. Data operator could let data providers to transfer their data into required format. Of course, the data operator can also provide some scripts for data provider to perform the format transferring locally.</p>
+<h4 class="mume-header" id="4223-data-authenticity">4.2.2.3 Data Authenticity</h4>
+
+<p>Different with other assets, it is more easy to fake data asset or to tamper with data asset. On the other side, data providers have strong motivation to fake or tamper with her data asset. She can get more profits by performing this malicious behavior. Because of that, data auth also needs to verify the authenticity of the data.</p>
+<p>Before the verification, we need to define what is the authenticity of data. For personal data, we find that most of them are produced by some applications. For example the communcation data must produced by Facebook or other social application, the shopping data must produced by Amazon or other shopping applications. Based on this observation, currently, we define the data authenticity as whether the data is produced by a specific application.</p>
+<p>To verify the data authenticity, Auth3 protocol will provide special Auth functions. These Auth functions will compare the data provider&apos;s data with the data downloaded from corresponding application server (e.g., the Facebook). To achieve this goal, when data provider sends request to Auth engine, the provider should allow the engine to access her application account, by providing the passward or the login cookie.</p>
+<h4 class="mume-header" id="4222-data-report">4.2.2.2 Data Report</h4>
+
+<p>After finishing all evaluations on the data, Auth engine will generate a <strong>data report</strong> to prove the evaluation request. The data report can prove the ownership of the data, the authenticity of the data and the quality scores of the data (calculated by Auth functions). The data report can be verified by anyone, including the off-chain components (e.g., the data operator) and the on-chain smar contracts (e.g., the distrubuted market place). Data operator always uses the data report to check whether a data provider&apos;s data stasifies her requrements.</p>
+<p>A data report includes the following parts:</p>
+<ul>
+<li><strong>Data Owner</strong>: The owner ID of the data. When a data provider sends data auth request to the Auth3 engine, the provider will send  her ID as an argument. The owner ID could be the public key of the data provider.</li>
+<li><strong>Authenticity</strong>: This field specifies whether the data is faked or has been tampered with, as well as the hash value and the URL of the data.</li>
+<li><strong>Quality Scores</strong>: This field includes all the quality scores evaluated by Auth functions</li>
+<li><strong>Auth Engine Information</strong>: This field shows the information about the Auth engine and the evaluation procedure. Typically, this field includes the ID about the Auth engine, when the data auth is performed, etc.</li>
+<li><strong>Signature</strong>: To enforce that the data report cannot be tamperred with, Auth engine will use its privated key to sign the report.</li>
+</ul>
+<p>For anyone who wants to verify the data report. She can first check whether the report is generated by an Auth engine and has been tamperred with, by verifying the signature in the report. After that, she can check the ownership, authenticity and quality of the data.</p>
+<p>During the above verification procedure, an important thing is how to check the signature. Whenever an Auth engine join Auth3 network, it needs to upload its public key on the blockchain. Anyone can find the public key by using the Auth engine ID in the report.</p>
+<h3 class="mume-header" id="423-computation-auth">4.2.3 Computation Auth</h3>
+
+<p><strong>Auth engine</strong> also protects the data exchang procedure by providing <strong>computation auth</strong> functionality. As mentioned before, the data exchange is performed by data computation. Computation auth notarize that the computation uses the correct data and algorithm, and generates correct result. Computation auth includes the follwing steps.</p>
+<h4 class="mume-header" id="4231-data-verification">4.2.3.1 Data Verification</h4>
+
+<p><strong>Auth engine</strong> takes responsibility to perform the data computation. Once receiving a data computation request, Auth engine will pull data from data provider&apos;s storage. After that, Auth engine will check the pulled data with help of the data report.</p>
+<p>Firstly, Auth engine checks whether the data report is real and whether the data is the one specified by the report. It first validates the signature of the report, with the singer&apos;s (mayby another Auth engine) public key. After that, it checks whether the hash value of input data is same as the one in the report. If these verification is passed, Auth engine can get the real quality scores of the input data.</p>
+<p>Thereafter,  Auth engine checks whether these quality scores stasify the requirements of the data project. The requirements can be downloaded from the distrubuted marketplace (on blockchain). Only when all requirements are stasified, the data verification can be passed.</p>
+<h4 class="mume-header" id="4232-algorithm-verification">4.2.3.2 Algorithm Verification</h4>
+
+<p>Before starting the execution, Auth engine also verifies the algorithm used by the data consumer. It checks whether the algorithm is audited by Auth3DAO and whether the algoirthm stasifies the access policy of target data project.</p>
+<p>For the previous one, once an algorithm is audited by Auth3DAO, its hash value will be uploaded to the marketplace (on the bloakchain). Auth engine can download these hash values and checks whether the used algorithm is audited.</p>
+<p>For the access policy check, the policy is uploaded to the marketplace when data operator launchs the data project and is maintained by the data operator. The policy specifies which algorithm can access the data project. Auth engine checks whether current algorithm stasifies the access policy.</p>
+<h4 class="mume-header" id="4233-trusted-execution">4.2.3.3 Trusted Execution</h4>
+
+<p>After verifying both the data and the algorithm, Auth engine will start the data execution. During the execution, the engine needs to enforce both the data privacy and execution correctness. We leverage trusted execution environment (TEE) to acheve them. Auth engine loads both the input data and the algorithm in a TEE instance. Auth3 protocol provides a runtime to run the algorithm directly in SGX-based TEE.</p>
+<h4 class="mume-header" id="4234-computaion-report">4.2.3.4 Computaion Report</h4>
+
+<p>Finally, the algorithm will generate the return value. Instead of just returning this value, Auth engine returns a computation report to the data consumer, to prove the whole computation procedure. The computation report includes the following fileds:</p>
+<ul>
+<li><strong>Input Data</strong>: This field specifies the used data sets in the computation.</li>
+<li><strong>Algorithm Information</strong>: This field specifies the used algorithm in the computation.</li>
+<li><strong>Return Value</strong>: This filed contains the return value.</li>
+<li><strong>Execution Information</strong>: This field contains the ID of the Auth engine, the execution time and metadata about the execution environment.</li>
+<li><strong>Signature</strong>:  To enforce that the report cannot be tamperred with, Auth engine will use its privated key to sign the report.</li>
+</ul>
+<p>Same as the data report, anyone can verify the computation report, to confirm the dataset, the algorithm and the execution environment which used to generate the return value.</p>
+<h2 class="mume-header" id="43-data-operator">4.3 Data Operator</h2>
+
+<p>Data operator is an important role in Auth3 protocol, who helps different data provider to aggregate their data assets and publishes data service. The main tasks of data operator are data project launching, data collection and data project publishing. Auth3 protocol provides a tool to help the data operator to perform these tasks. We will introduce the details in this subsection.</p>
+<h3 class="mume-header" id="431-launching-data-project">4.3.1 Launching Data Project</h3>
+
+<p>The first task of data operator is to launching a data project. In this step, data operator needs to upload the information of data project on the marketplace (on blockchain). The information first includes the description of the project, e.g., what kind of data the project tries to aggregate. It further includes the detailed data format, Auth functions for evaluating the data quality and the access policy of the data project.</p>
+<p>By leveraging the tools provided by Auth3 protocol, data operator can upload all above metadata to the marketplace. Once she finishes the uploading, the data project is launched. Thereafter, any data provider can add her data to the project.</p>
+<p>During the launching, there are three kinds of critical information: data format, auth function and access policy. The following subsections will introduce them.</p>
+<h4 class="mume-header" id="4311-data-format">4.3.1.1 Data Format</h4>
+
+<p>To aggregate data assets from different data providers, one of the most important task is to unify the data format. The data usage algorithm cannot run on data with messy data format. Auth3 protocol provides two method for data operator to specify the data format required by her data project:</p>
+<ul>
+<li><strong>Format Specification</strong>: Since the types of data and application scenarios are multifarious, Auth3 protocol gives data operator the opportunity to speficy the data format for her data project. The specification can be written in natural language. Meanwhile, data operator can also provide data example to help data providers understand the format.</li>
+<li><strong>Format Script</strong>: It is difficult for a personal data provider to transfer her data into the required data format. To solve this problem, Auth3 protocol allows the data operator to provide a format script. This script can automatically transfer data to the required format.</li>
+</ul>
+<p>Both the format specification and format script (which is optional) need to be uploaded to the marketplace. Data provider can download the format script and run it locally to re-format her data. After that, provider can send re-formatted data to Auth engine to perform data Auth.</p>
+<h4 class="mume-header" id="4312-auth-function">4.3.1.2 Auth Function</h4>
+
+<p>As mentioned before, data provider needs to write multiple Auth functions to evaluate the quality of data. Each Auth function should take the data with required format as input, and return a quality score. The Auth function can be written with high-level language, e.g., Python. During the launching, data operator needs to upload all Auth functions to the marketplace.</p>
+<p>Besides the function, data operator also needs to specify the required quality bar. For each Auth function, the operator should set a minimal quality score required by the data project. These requirements will also be uploaded to the marketplace.</p>
+<h4 class="mume-header" id="4313-access-policy">4.3.1.3 Access Policy</h4>
+
+<p>After specifying the requirements of the data, data operator also needs to configure how the data project can be used.  Specifically, Auth3 protocol allows data operator to configure an a <strong>access policy</strong> for each data project. In Auth3 protocol, data can only be used with data usage algorithm. The access policy will specify which algorithms can be used to on current data project.</p>
+<p>Data operator can use two kinds of access policy: whitelist policy and blacklist policy. The previous one specifies which algorithm <strong>can</strong> access current data project. The later one specifies which one cannot access current project. For a data project, the data operator can only use one kind ofacces policy. The policy will be uploaded to the marketplace, as a part of the data project.</p>
+<h3 class="mume-header" id="432-data-collection">4.3.2 Data Collection</h3>
+
+<p>After launching the data project, data operator will start to collect data from different data providers. During the collection, data provider only <strong>sends data report, instead of data itself, to the operator</strong>. As mentioned before, the data report is generated by an Auth engine.</p>
+<p>For each data join request, data provider will first check whether the data report is generated by a Auth engine. After the checking, provider will get quality scores from the report and check whether these scores satisfy the project requirements.</p>
+<p>Only when the validation is passed, data operator will accept the join request, and store the data report as well as some metadata.</p>
+<h3 class="mume-header" id="433-publishing-data-project">4.3.3 Publishing Data Project</h3>
+
+<p>Once the data operator collects enough data, she could finish the collection stage and publish the data project. During the publishing, operator will update more information to the marketplace:</p>
+<ul>
+<li><strong>Data Size</strong>: Operator should specify how many data providers join the data project, and the total data size of the data project.</li>
+<li><strong>Data URLs</strong>: The URLs of all data in current project.</li>
+<li><strong>Data Quality Scores</strong>: After collecting all scores from data providers, operator could calculate multiple scores to specify the quality for the data project. These scores will help consumers to get the value of this data project.</li>
+<li><strong>Data Price</strong>: Specify how many data tokens are need to use current data project.</li>
+</ul>
+<p>Besides uploading these informations, another important task of data operator is to issue data token. Any one owns the data token has ability to access the data project. In Auth3 protocol, the data token will be transacted on a DEX with a DATATOKEN/AUTH3 pool. To provide the initial liquidity, data operator needs to find some liquidity providers. The <strong>marketplace</strong> can help to finish this task.</p>
+<p>We provide tools for data operator to issue the data token. We also provide a tamplate contract. This contract provides a novel token model which reduces the fluctuation of service price and does not influence the token appreciation. Details are shown in <a href="">Section X.X</a>.</p>
+<h2 class="mume-header" id="44-privacytrust-everywhere">4.4. Privacy&amp;Trust, Everywhere</h2>
+
+<h3 class="mume-header" id="441-overview">4.4.1 Overview</h3>
+
+<p>The main goal of Auth3 protocol is to connect people and data. To perform the connection, privacy and trust are two important properties which need to be enforced. In the whole data exchanging procedure, from data storage to data usage, Auth3 protocol needs to enforces these two properties.</p>
+<p>Let&apos;s first introduce these two properties:</p>
+<ul>
+<li>
+<p><strong>Data Privacy</strong>: Auth3 protocol tries to only exchange the data value, instead of the data itself. To achieve this goal, we must enforce the data privacy. Only the data provider herself can get the plaintext of her data. Anyone in the network cannot get the plaintext data.</p>
+</li>
+<li>
+<p><strong>Trust</strong>: Trust is the foundation of data exchanging. Any components in Auth3 network may try to fake something. For example, data provider may try to generate faked data to earn more data token. Data consumer may try to fake legal data usage algorithm to steal data. To solve this problem, Auth3 protocol needs to enforce the trust during the whole data exchanging procedure.</p>
+</li>
+</ul>
+<p>In this subsection, we divide the data exchanging procedure into four phases: data storage, data auth, project publication and data usage. For each phase, we will introduce how Auth3 protocol enforces both the privacy and trust.</p>
+<h3 class="mume-header" id="442-data-storage">4.4.2 Data Storage</h3>
+
+<p>In Auth3 protocol, data is only stored in data provider&apos;s storage. As mentioned before, the storage can either be an application running in provider&apos;s deivce or a third-party service rented by the provider. No matter which solution is chosen, the storage is controlled by the data provider.</p>
+<p>Since the plaintext of data is only stored in provider-controlled storage, the data privacy can be easily enforced during data storage phase. Meanwhile, the storage is trusted to the data provider.</p>
+<h3 class="mume-header" id="443-data-auth">4.4.3 Data Auth</h3>
+
+<p>The data Auth is performed by <strong>Auth engine</strong>. In this phase, Auth3 protocol needs to enforce both the data privacy and the trust of auth result, a.k.a. data report.</p>
+<p><strong>For data privacy</strong>. Auth engine needs to get the data so that it can use Auth functions to calculate the quality score. The engine uses trusted execution environment (TEE) to enforce the data privacy during the execution. A TEE instance is similar as a blackbox, it can forbid any outside components, including the operating system, to access data inside the TEE.</p>
+<p>When a data provider sends data Auth request to an Auth engine, the provider will use remote attestation to confirm whether the Auth engine uses TEE. After the attestation, the data provider builds a secure channel with the TEE instance. Then, provider sends data to the Auth engine through this secure channel. With the above method, the provider can enforce that the data can only be calculated within a TEE instance with specified Auth function. Because of that, the data privacy can be enforced during data Auth.</p>
+<p><strong>For Trust</strong>. Auth3 protocol needs to enforce that the <strong>data report</strong> is trusted and can be verified. To achieve this, Auth engine will generate a pair of keys in the TEE and provided by trusted hardware. After finishing the data Auth, the engine uses the privated key to sign the report.</p>
+<p>Anyone can verify the data report by using the public key of the Auth engine. To enforce that correct key can be got, Auth engine will submit its public key to the blockchain when the engine joins the network. Auth3DAO will help to verify that the corresponding private key is protected within a TEE instance. After that, anyone can get the correct public key from the blockchain.</p>
+<h3 class="mume-header" id="444-project-publication">4.4.4 Project Publication</h3>
+
+<p><strong>For data privacy</strong>. During the project publication, data operator needs to collection all data from different data providers. To protect the data privacy, Auth3 protocol allows data provider to only send data report to the operator, instead of sending plaintext data.</p>
+<p><strong>For trust</strong>. We need to enforce that the data information provided by data provider is trusted and the published data project from data operator is trusted. For the previous one, Auth3 protocol relies the data report to enforce it. Data operator can use the public key of Auth engine to verify whether the data information is correct.</p>
+<p>For the latter one, the data operator needs to aggregate the metadata of all data provider&apos;s data. The aggregated metadata can be verified by anyone with the help of the data report, and we also allow the Auth3DAO to perform the verification. The DAO can get all data reports of a data project and verify each data report. After that, they can further verify the aggregated metadata. After the verificaion, the DAO can mark the data project as verified in marketplace. Of couse, anyone can re-produce this verification by herself.</p>
+<h3 class="mume-header" id="445-data-usage">4.4.5 Data Usage</h3>
+
+<p>The last phase is the data usage, in which the consumer can run data usage algorithm on a data project. During this phase, Auth3 protocol needs to enforce both the data privacy and the trust of the returned value.</p>
+<p><strong>For data privacy</strong>. The execution of the data usage is performed in Auth engine. The engine uses TEE to protect the data privacy during the execution. Remote attestation is used to enforce that data will only be sent to a TEE instance of the Auth engine.</p>
+<p>At the same time, the logic inside the TEE instance also checks that whether the data usage algorithm satisfy the access policy of the data project. For example, it the access policy uses whitelist policy, Auth engine will calculate the hash of the used algorithm and check whether the hash value is in the whitelist. If the execution uses ilegal algorithm, Auth engine will abort it.</p>
+<p><strong>For trust</strong>. After the execution, Auth engine will generate a computation report which includes both the used data and algorithm. The report will be signed with the privated key of current Auth engine. With this method, anyone, including the data consmuer, can verify the execution and confirm that the return value is calculated correctly.</p>
+<h2 class="mume-header" id="45-auth3-marketplace">4.5 Auth3 Marketplace</h2>
+
+<p>Auth3 market is a vendor-neutral reference data marketplace for use by the Auth3 community. It consists of small markets centered around a data token. People issue or buy and consume data token in the market. It&#x2019;s decentralized (no single owner or controller), and non-custodial (only the data owner holds the keys for the data tokens).</p>
+<h3 class="mume-header" id="451-market-role">4.5.1 Market role</h3>
+
+<ul>
+<li><strong>Data provider</strong> Data provider provides data token to data operator. Data operator can also issue data tokens. (<strong>Remain to be discussed</strong>)</li>
+<li><strong>Data operator</strong> Data operator packs up data to form a data set, and select economic models to issue and sell data tokens.</li>
+<li><strong>Data consumer</strong> Data consumer buys and consumes data tokens. Data consumer can be divided into two groups, one is merchants and the other is individuals.</li>
+<li><strong>Liquidity provider</strong> They provide liquidity to pools and receive liquidity rewards.</li>
+</ul>
+<h3 class="mume-header" id="452-two-markets">4.5.2 Two markets</h3>
+
+<ol>
+<li>
+<p><strong>The market where data providers provide data to operators</strong><br>
+We will set a basic price for each type of data, and at the same time estimate the data provided by the data provider based on the system&apos;s rating of the data when the user uploads it. The data provider can use this valuation as a reference price. If you choose to price based on the reference value, you can establish a connection with the data set on the market and add it to the data set for profit. (In other words, the bid price of each data set by the operator is equal to the reference price given by the system)</p>
+</li>
+<li>
+<p><strong>The market where data operators trade with consumers</strong><br>
+Data operators need to select economic model to issue data tokens.</p>
+</li>
+</ol>
+<h3 class="mume-header" id="453-auth3-market-tools">4.5.3 Auth3 market tools</h3>
+
+<p>Auth3 provides a large infrastructure panel which aggregates a variety of tools, code templates.</p>
+<h4 class="mume-header" id="4531-basic-tools">4.5.3.1 Basic tools&#xFF1A;</h4>
+
+<p>We analyze the existing models in the market from the two links of production and consumption:</p>
+<h5 class="mume-header" id="production-process">Production process</h5>
+
+<p>In the production process, three aspects of issuance, transaction, and pricing are involved. We analyze the existing models in the market from these three aspects and give our recommendations based on the attributes of the data tokens.</p>
+<h6 class="mume-header" id="1-issue">1. Issue</h6>
+
+<p>We divide the issuance stage into the initial issuance stage and the subsequent issuance stage, and analyze these two separately:</p>
+<ul>
+<li>
+<p><strong>Initial issuance</strong>&#xFF1A;The classification standard is whether there is reserve support.</p>
+<ul>
+<li>
+<p>No need for initial capital:<br>
+Initial Coin Offering (ICO);<br>
+Initial Exchange Offering requires payment to the centralized exchange, while on a decentralized exchange such as Uniswap, no payment is required, but project needs to add their tokens and the other tokens with the same value into the liquidity pool.</p>
+</li>
+<li>
+<p>Need for initial capital&#xFF1A;<br>
+<strong>Balancer&#x2019;s LBP</strong>: LBP is designed to minimize volatility and prevent front-running and price speculation by automatically adjusting the weights down during a token launch. LBPs are open and accessible for all to use, and allow teams to release a token project while building liquidity. This method also allows a project to set their own ratio of initial capital allocated to the sale. To begin a LBP, project needs to put a certain amount of reserves and their tokens into the pool.<br>
+<strong>Bonding curve</strong>: The project doesn&#x2019;t need to put in reserves</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Follow-on offering</strong>: The classification standard is whether it supplies on demand.</p>
+<ul>
+<li><strong>Limited quantity</strong>&#xFF1A;ICO, IEO, Balancer and so on</li>
+<li><strong>Unlimited quantity</strong>&#xFF1A;Bonding curve</li>
+</ul>
+</li>
+</ul>
+<p>Auth3&#x2019;s market tools enable operators to use any of the above methods to issue data tokens. At the same time, considering projects&#x2019; different requirements, we recommend:</p>
+<ul>
+<li>For project who wants to issue on demand, we recommend bonding curve, of which Bancor is the earliest practice of it;</li>
+<li>For project who wants to prevent front-running and price speculation, we recommend to use Balancer&#x2019;s LBP. In the Auth3 Market GUI, the user adds liquidity then invokes pool creation; the GUI&#x2019;s React code calls the Auth3 JavaScript library, which calls Balancer Factory to deploy a Balancer BPool contract.</li>
+</ul>
+<h6 class="mume-header" id="2-trade">2. Trade</h6>
+
+<p>In finance, there are three trading systems: inquiry, quotation, and bidding. The bidding trading system brings the order book matching trading (belonging to two-way bidding), market maker trading (belonging to two-way bidding), and auction (belonging to one-way bidding). In blockchain, an innovate project called Bancor which is the first AMM (Automated Market Maker) brings an innovation to the traditional market maker.</p>
+<div align="center">
+<img src="./images/market.png" width="90%">
+</div>
+<center> <b>Figure. The evolution of trading system in the financial market</b></center>
+<br>
+<p>In blockchain, order book, auction and market maker are most popular. Let&#x2019;s review each.</p>
+<ol>
+<li><strong>Order book</strong>: The liquidity is not good, and it is not suitable for long-tail tokens such as data.</li>
+<li><strong>Auction mode</strong>: Auctions occur over a time interval. Therefore, the auction is slow and liquidity is poor.</li>
+<li><strong>Market maker, especially AMM</strong>: The traditional market maker model needs to have strong capital reserves, strong resistance to risks, and resistance to extremely short unilateral market conditions. AMM has innovated the traditional market maker model so that risks are diversified and shared.</li>
+</ol>
+<p>Auth3&apos;s market tools allow operators to trade data tokens using any of the above methods. But we recommend: AMM and order book should exist at the same time. AMM has more liquid. But AMM&apos;s price discovery mechanism has problems. The order book has poor liquidity, but the price discovery is more in line with the market. Therefore, the two must exist at the same time and have complementary advantages. (For AMM, we recommend bancorV2, or to wait for uniswapV3)</p>
+<h6 class="mume-header" id="3-pricing">3. Pricing</h6>
+
+<p>We divide the trading methods into several categories from the perspective of planning and market.</p>
+<ol>
+<li>
+<p><strong>Fixed Pricing</strong>: Users can sign a simple contract to buy/sell Auth3 data tokens.</p>
+</li>
+<li>
+<p><strong>Market Pricing</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Order book. The order book requires real buy and sell orders as counterparties. Therefore, we do not recommend using the order book to price when liquidity is small.</p>
+</li>
+<li>
+<p>Auction. Auction is very suitable to the initial market price discovery, but the price discovery is inefficient. As for data with fast liquidity, we do not recommend auction pricing model for data tokens.</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>Automated Pricing</strong>:<br>
+For example, Uniswap realizes automatic pricing through x*y=k, Balancer LBP smart pool realizes automatic pricing by dynamically adjusting the ratio of reserves according to a curve that is artificially set, and Bancor realizes automatic pricing through bonding curve where the ratio of connecter tokens and smart tokens is set by R=FPS.</li>
+</ol>
+<p>Auth&apos;s market tools allow operators to use any of the methods to price data tokens, but because of the strong liquidity of data tokens, we recommend automatic pricing most.</p>
+<h5 class="mume-header" id="consumption-process">Consumption process</h5>
+
+<p>In addition to production process, the other process is consumption. After buying data token from data operator, data consumer needs to consume data token to get data. There are two way to consume data token.</p>
+<ul>
+<li>
+<p><strong>Rent</strong> Data consumer can use the data when holding the data token. It can be sold on the market at any time after the use process is over. Because data token only represents the sale of the data-use rights, consumer should pay rent according to the time of holding. The rent is given to the operator and distributed to the provider according to a ratio which is set by the operator.</p>
+</li>
+<li>
+<p><strong>Burn</strong> The consumer needs to burn the token that he holds, to get access to the data. The burning is instantly set off when the consumer uses the data, but the whole burning will last until the processing of data is over.</p>
+</li>
+</ul>
+<p>Auth&apos;s market tools allow operators to set any of the methods to let consumers consume data tokens.</p>
+<h4 class="mume-header" id="4532-derivative-tools">4.5.3.2 Derivative  tools&#xFF1A;</h4>
+
+<p>Data can be regarded as an asset class for Defi. For example, data can be securitized and used as collateral.</p>
+<h3 class="mume-header" id="454-market-supplement">4.5.4 Market supplement</h3>
+
+<h4 class="mume-header" id="4541-visual-interface">4.5.4.1 Visual interface</h4>
+
+<p>According to some indicators such as value, Auth3 will list a list of high-quality data projects for the data provider to help them select suitable projects to add their own data.</p>
+<h4 class="mume-header" id="4542-code-reference">4.5.4.2 Code Reference</h4>
+
+<p>Auth3 provides code reference to simplify the construction of the user&#x2019;s (data operator) data market.</p>
+<h4 class="mume-header" id="4543-support-for-innovation-of-markets-tools">4.5.4.3 Support for innovation of markets tools</h4>
+
+<p>We encourage users to create new markets tools with Auth3 token incentives. After the new economic model has passed certain standards (Auth3 audit + DAO), it can be added to Auth3 market&#x2019;s tool panel.</p>
+<h2 class="mume-header" id="46-auth3-dao">4.6 Auth3 DAO</h2>
+
+<p>Auth3 DAO&apos;s goal is to make Auth3 grow into an energetic, powerful and anti-fragile data ecosystem and keep improving for decades across bulls and bears. This goal requires an autonomous and self-sustained governance mechanism and needs each community member to participate in. We hope the detailed rules and implementation measures will be discussed, innovated and voted by the wisdom of the community, we just provide principled recommendations here.</p>
+<p>For healthy and long-term growth of Auth3, we should have both supervision and grant mechanism for the ecosystem.</p>
+<h2 class="mume-header" id="461-supervision-dao">4.6.1 Supervision DAO</h2>
+
+<p>Auth3 aims to break data silos, unleash data, create incremental values for modern commercial activities and help users get rewards that they deserve, but by no means the channel for gathering or propagating illegal information.</p>
+<p>At the first stage, we shall publish a draft proposal of data regulations that may indicate what kind of data or data sources are forbidden, as well as rules of incentives and penalties. Then we will set up a compliance committee, of which all members are elected from the community. Committee members need to stake Auth3 tokens for the right of voting or initiating a vote. Similarly, the Data Operator has to stake a certain number of Auth3 tokens when launch a data project, and he should be the first responsible person for the project compliance.</p>
+<p>Once a data project is detected and reported due to violation, the committe shall initiate a vote (any member can perform this action) for the project, if passed and the violation behavior is confirmed, the operator will be fined and the commitee members who voted for violation will be rewarded.</p>
+<p>The committee is also responsible for the iterative refinement of the data regulations and incentive mechanisms. We expect the committee to be a powerful safeguard for the healthy and sustainable growth of Auth3.</p>
+<h2 class="mume-header" id="462-grant-dao">4.6.2 Grant DAO</h2>
+
+<p>We also need a grant mechanism to incentivize all kinds of contributions to Auth3 data ecosystem, which may includes:</p>
+<ul>
+<li>The development and improvement of Auth3&apos;s core architecture, such as the auth engine, data marketplace, privacy-enhanced stoarge protocol, etc.</li>
+<li>Enrich the surrounding ecology, including various data applications or DeFi applications into Auth3.</li>
+<li>Improvement of staking and usage volumes of data, specifically introducing more data provider, consumers, as well as algorithm providers into the network.</li>
+<li>Positive publicity, promotion, outreach for Auth3.</li>
+<li>Contributions and improvements to Auth3 DAO.</li>
+</ul>
+<p>The income of Auth3 DAO comes from the network rewards and network revenue. Auth3 DAO helps to close the value circulation loop of Auth3: more fund flows into Auth3 DAO, more prosperous the ecosystem will get, which leads to more usage of the network and growth in the value of Auth3, thus will bring more network revenue. A certain proportion of the revenue will go back to Auth3 DAO for incentives, which completes the loop.</p>
+<h1 class="mume-header" id="5-token-economics">5. Token economics</h1>
+
+<h2 class="mume-header" id="51-the-value-of-auth3-token">5.1 The value of Auth3 token</h2>
+
+<ul>
+<li><strong>Governance</strong> Auth3 token is a governance token to vote in Auth3 DAO.</li>
+<li><strong>Fees</strong> Data operators need to pay Auth3 tokens to issue data tokens. They need to pay an Auth3 as a reserve before the issuance. The following two situations will deduct a certain share from the reserve:
+<ul>
+<li>The issuance of data tokens could involve some issues. For example, the data contains pornographic photos. Once a problem occurs, the fine will be deducted from the data operator&#x2019;s reserve and paid to the supervisor, etc.</li>
+<li>The issuance of data token needs to be audited, so the operator needs to pay the auditors. The fees will be deducted from the data operator&#x2019;s reserve.</li>
+</ul>
+</li>
+<li><strong>Liquidity mining</strong>  Auth3 will set four pools ETH/AUTH3&#x3001;USDC/ AUTH3&#x3001;USDT/ AUTH3&#x3001;DAI/ AUTH3 for Auth3 mining. The Auth3 mining rewards are distributed to liquidity providers in proportion to the proportion of liquidity provided. Afterwards, the voting governance of the Auth3 project will be launched. The holders of Auth3 tokens can vote to decide whether to add other liquid pools for liquidity mining.</li>
+</ul>
+<h2 class="mume-header" id="52-rules-of-early-token-distribution">5.2 Rules of early token distribution</h2>
+
+<p>The initial minting of Auth3 is 1 billion, and the initial supply will be distributed in the next 4 years. After 4 years, Auth3 will start to continue to inflate at 2% per year to ensure that there is a sufficient amount of Auth3 to motivate users who participate and contribute to the development of the project.</p>
+<h3 class="mume-header" id="521-distribution-by-value">5.2.1 Distribution by value</h3>
+
+<ol>
+<li>70% distributed to Auth3 community members</li>
+</ol>
+<ul>
+<li>Network revenue</li>
+<li>Reserve to ensure the progress of other distribution plans such as donations from contributors, community initiatives, liquidity mining, etc.
+<ul>
+<li>Token incentives for developers</li>
+<li>Liquid mining (currently set to open for one year, accounting for 1%)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>10% distributed to team members</li>
+<li>5% will be distributed to project investors</li>
+<li>10% ICO/IEO/IDO</li>
+<li>5% Foundation reseved</li>
+</ol>
+<h3 class="mume-header" id="622-distribution-by-time">6.2.2 Distribution by time</h3>
+
+<ul>
+<li>40% of the reserved total will be unlocked in the first year</li>
+<li>Unlock 30% in the second year</li>
+<li>Unlock 20% in the third year</li>
+<li>Unlock 10% in the fourth year</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
