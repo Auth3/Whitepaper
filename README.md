@@ -374,7 +374,7 @@ At the same time, the logic inside the TEE instance also checks that whether the
 Auth3 market is a vendor-neutral reference data marketplace for use by the Auth3 community. It consists of small markets centered around a data token. People issue or buy and consume data token in the market. It’s decentralized (no single owner or controller), and non-custodial (only the data owner holds the keys for the data tokens).
 
 ### 4.5.1 Market role
-* **Data provider** Data provider provides data token to data operator. Data operator can also issue data tokens. (**Remain to be discussed**)
+* **Data provider** Data provider provides data  to data operator. Data operator can also issue data tokens. (**Remain to be discussed**)
 * **Data operator** Data operator packs up data to form a data set, and select economic models to issue and sell data tokens.
 * **Data consumer** Data consumer buys and consumes data tokens. Data consumer can be divided into two groups, one is merchants and the other is individuals. 
 * **Liquidity provider** They provide liquidity to pools and receive liquidity rewards.
@@ -408,8 +408,7 @@ We divide the issuance stage into the initial issuance stage and the subsequent 
   **Bonding curve**: The project doesn’t need to put in reserves  
 
 * **Follow-on offering**: The classification standard is whether it supplies on demand.
-
-  + **Limited quantity**：ICO, IEO, Balancer and so on
++ **Limited quantity**：ICO, IEO, Balancer and so on
   + **Unlimited quantity**：Bonding curve
 
 Auth3’s market tools enable operators to use any of the above methods to issue data tokens. At the same time, considering projects’ different requirements, we recommend:
